@@ -1,8 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,useRef} from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import styles from "../css/hospitalRegistrationForm.module.css";
 import { Checkmark } from "react-checkmark";
+// import { SunspotLoader } from "react-awesome-loaders";
+import {OrbitProgress} from "react-loading-indicators";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -23,6 +25,10 @@ const HospitalRegistrationForm = () => {
     identity_card: "",
     hospital_photoes: [],
   });
+
+  const [loading,setLoading] = useState(false);
+
+  const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     const files = e.target.files;
@@ -76,8 +82,9 @@ const HospitalRegistrationForm = () => {
   }
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-    // reset();
+    reset();
     let formData = new FormData();
     for (let key in hospital_details) {
       if (key == "identity_card")
@@ -94,12 +101,17 @@ const HospitalRegistrationForm = () => {
     // console.log("formData", formData);
     try {
       let response = await axios.post("http://localhost:4000/applyForHospital",formData);
+
       console.log(response.data);
       Swal.fire({
         title: "Successfully Applied for Hospital Registration!",
         text: "Your account will be created after the varification",
         icon: "success"
-    });
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
       
     } catch (error) {
       Swal.fire({
@@ -108,11 +120,20 @@ const HospitalRegistrationForm = () => {
         text: "You will have mail onece varification is Done",
     });
     }
-  
+    finally{
+      setLoading(false);
+    }
   };
 
   return (
-    <form
+    <div>
+ {
+      loading === true ? <div className={styles.div6} >
+       {
+       <OrbitProgress color="#32cd32" size="large" text="" textColor=""  />
+       }
+      </div>
+      :<form
       className={styles.container}
       onSubmit={handleSubmit}
       encType="multipart/form-data"
@@ -182,6 +203,7 @@ const HospitalRegistrationForm = () => {
         <input
           type="file"
           name="identity_card"
+          ref={fileInputRef}
           onChange={handleFileChange}
           accept=".jpg, .jpeg, .png, .pdf"
         />
@@ -316,7 +338,7 @@ const HospitalRegistrationForm = () => {
           </div>
         </div>
       </div>
-
+      
       <button type="submit" className={styles.button}>
         submit
       </button>
@@ -325,6 +347,10 @@ const HospitalRegistrationForm = () => {
         You will receive Credentials after verification
       </div>
     </form>
+   }
+    </div>
+   
+    
   );
 };
 export default HospitalRegistrationForm;

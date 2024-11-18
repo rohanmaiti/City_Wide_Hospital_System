@@ -294,5 +294,83 @@ It helps maintain the SPA behavior by enabling navigation without a page reload.
 
       
 
+*    // Learned How we can reset the value of input type file after submitting 
+*      Usign useRef() hook
+*      import {useRef} from "react";
+*      export function (){
+*      const fileInputRef = useRef(null)
+*      
+*      function handleSubmit(e){
+         /// rest of the code 
+
+*        if (fileInputRef.current) {
+*        fileInputRef.current.value = "";
+*        }
+       }
+       return (
+       <input type="file"
+       name="image"
+*      ref={fileInputRef}
+       onChange={handleFileChange}
+       accept=".jpg, .jpeg, .png, .pdf"
+       />
+       )
+*      }
+
+* How fileInputRef Works:
+* Initialization:
+
+When you create fileInputRef using useRef(null), it initially points to null.
+At this point, it is just an empty reference with no connection to any DOM element.
+javascript
+Copy code
+const fileInputRef = useRef(null); // Starts as null
+Ref Attachment:
+
+When the <input> element renders and ref={fileInputRef} is applied, React attaches the actual DOM element to fileInputRef.current.
+Now, fileInputRef.current holds the reference to the <input> element in the DOM.
+javascript
+Copy code
+<input
+  type="file"
+  ref={fileInputRef} // React attaches this input to fileInputRef.current
+/>
+File Selection:
+
+When you select a file, the value of the <input> element is updated to show the selected file's name (e.g., example.jpg).
+However, this value is not directly reflected in fileInputRef.current—instead, the fileInputRef remains connected to the input element.
+What happens here:
+
+fileInputRef.current is still pointing to the input element itself.
+You can interact with its properties, like fileInputRef.current.value, fileInputRef.current.files, etc.
+Resetting the Input:
+
+After submission, you clear the file input by setting fileInputRef.current.value to an empty string ("").
+This effectively resets the file input to its initial state.
+javascript
+Copy code
+if (fileInputRef.current) {
+  fileInputRef.current.value = ""; // Clear the input
+}
+Why Not Assign null?
+If you assign null to fileInputRef.current, it breaks the connection between the fileInputRef and the DOM element.
+Instead, setting fileInputRef.current.value = "" only resets the value of the input element while keeping the reference intact.
+Visual Flow of fileInputRef:
+Initial State:
+
+fileInputRef.current = null
+After Render:
+
+fileInputRef.current points to the file input DOM element.
+File Selection:
+
+fileInputRef.current.files contains the selected files.
+After Reset:
+
+fileInputRef.current.value = "" clears the file input field without breaking the reference.
+
+
+* Learned about react loader animation , will have to install a dependency and can directly use it 
+  learned form react loading indicator 
         
  */
