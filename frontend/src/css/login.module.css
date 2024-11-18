@@ -1,0 +1,49 @@
+.container{
+    /* border:1px solid black; */
+    /* border-color: blueviolet; */
+    height: 370px;
+    width: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 70px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgb(25, 0, 255); 
+    background-color: rgb(42, 42, 43);
+}
+.h1{
+    color:blue;
+    /* position: relative;
+    top:-80px; */
+}
+.input{
+    border:none;
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    padding-left:10px;
+}
+.loginButton{
+    border: none;
+    margin-bottom: 20px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(127, 175, 126);
+}
+.loginButton:hover{
+    border:none;
+    background-color: rgb(15, 41, 188);
+    color:#ffff;
+}
+.link{
+    color:white;
+    margin-bottom: 5px;
+}
+.link:hover{
+    color:rgb(0, 255, 149);
+}

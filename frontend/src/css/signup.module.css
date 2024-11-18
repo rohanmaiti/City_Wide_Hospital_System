@@ -1,0 +1,76 @@
+.container{
+    /* border:1px solid black; */
+    /* border-color: blueviolet; */
+    height: 440px;
+    width: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 70px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0); 
+    background-color: rgb(136, 136, 188);
+    gap: 7px;
+}
+.h1{
+    color:rgb(0, 2, 66) !important;
+    /* position: relative;
+    top:-80px; */
+}
+.input{
+    border:none;
+    width: 280px;
+    height: 25px;
+    border-radius: 5px;
+    color: black;
+    padding-left:10px;
+}
+.signupButton{
+    margin-bottom: 20px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: rgb(214, 230, 39);
+}
+.signupButton:hover{
+    border:none;
+    background-color: rgb(173, 255, 163);
+    color:#000000;
+}
+.link{
+    color:-webkit-link;
+}
+.link:hover{
+    color:rgb(37, 3, 40);
+}
+.selectBox{
+    border: none;
+    border-radius: 3px;
+}
+.label{
+    color:rgb(7, 8, 39);
+    font-weight: 600;
+    float: left;
+    font-size: 17px;
+    
+}
+.label2{
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+}
+.parent_of_select{
+ width: 282px;
+ position: relative;
+ left: 0px;
+}
+.phoneNumberCheck{
+    color:red;
+    font-size: 12px;
+    
+}
