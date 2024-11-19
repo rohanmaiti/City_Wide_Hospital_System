@@ -110,3 +110,9 @@ app.post("/applyForHospital",upload.fields([{ name: 'identity_card' }, { name: '
     }
     
 }) 
+
+app.get("/getHospitals",async (req,res)=>{
+    let hospitals = await Hospital.find({});
+    console.log(hospitals);
+    res.json({hospitals:hospitals});
+})
