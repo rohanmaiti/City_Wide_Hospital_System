@@ -149,12 +149,12 @@ Copy code
 replace: true makes sure the navigation doesn't push a new entry onto the stack but replaces the current one.
 state allows data to be passed to the destination route.
 Accessing State in the Target Component:
-If you pass state with navigate, you can access it in the target component using the useLocation hook:
+** If you pass state with navigate, you can access it in the target component using the useLocation hook:
 import { useLocation } from 'react-router-dom';
 
 function Profile() {
   const location = useLocation();
-  console.log(location.state); // { fromDashboard: true }
+**  console.log(location.state); // { fromDashboard: true }
 
   return <div>Profile Page</div>;
 }
@@ -372,5 +372,7 @@ fileInputRef.current.value = "" clears the file input field without breaking the
 
 * Learned about react loader animation , will have to install a dependency and can directly use it 
   learned form react loading indicator 
+
+* Learned about how we can server photoes that are beign stored in server via multer 
         
  */

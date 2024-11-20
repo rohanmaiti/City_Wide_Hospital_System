@@ -1,0 +1,39 @@
+.parentContainer{
+    display: flex;
+    gap: 20px;
+}
+.container{
+   width: 400px;
+   height: 350px;
+   /* border: 1px solid black; */
+   border-radius: 5px;
+   background-color: rgb(237, 237, 237);
+   padding: 10px;
+   margin: 10px;
+   box-shadow: 1px 1px 10px rgb(68, 68, 68);
+}
+.image{
+    aspect-ratio: 4/3;
+}
+.name{
+    font-size: 30px;
+    font-weight: 600;
+}
+.div1{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    align-items: center;
+}
+.button{
+    width: 70px;
+    height: 30px;
+    /* border: 1px solid black; */
+    font-size: 20px;
+    background-color: rgb(50, 255, 228);
+    border-radius: 5px;
+    color:rgb(63, 63, 63)
+}
+button:hover{
+    transform: scale(1.1);
+}

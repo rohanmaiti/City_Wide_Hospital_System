@@ -3,6 +3,7 @@ import Signup from './component/signup';
 import Forgotpassword from './component/forgot';
 import HospitalRegistrationForm from './component/hospitalRegistrationForm';
 import AdminApprovePage from "./component/adminApprove";
+import HospitalDetails from "./component/hospitalDetails";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 function App() {
   return (
@@ -10,11 +11,13 @@ function App() {
     <Router>
      
       <Routes>
-        <Route path="/" element={<Login/>} />
+        {/* <Route path="/" element={<Login/>} /> */}
         <Route path="/signup" element={<Signup/>} />
         <Route path="/forgotpassword" element={<Forgotpassword/>} />
         <Route path="/applyForHospital" element={<HospitalRegistrationForm/>} />
-        <Route path="/adminApprove" element={<AdminApprovePage/>} />
+        <Route path="/adminapprove" element={<AdminApprovePage/>} />
+        <Route path="/hospitalDetails" element={ <HospitalDetails/>} />
+       
       </Routes>
     </Router>
 

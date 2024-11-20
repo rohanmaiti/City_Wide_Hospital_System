@@ -18,6 +18,7 @@ const Hospital = require("./models/hospital");
 app.use(express.json());
 app.use(express.urlencoded()); 
 app.use(cors());
+app.use('/hospital_Images', express.static('hospital_Images'));
 
 const uploadCounts = {};
 const storage = multer.diskStorage({
