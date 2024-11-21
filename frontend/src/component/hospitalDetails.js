@@ -1,49 +1,58 @@
 import React from "react";
 import {useState, useEffect} from "react"
 import {useNavigate , useLocation} from "react-router-dom"
+import styles from "../css/hospitalDetails.module.css"
 
 export default function HospitalDetails(){
-    let i = 0;
     const location = useLocation();
     const [hospital,setHospital] = useState({});
-    const [currentIndex, setCurrentIndex] = useState(0);
-    useEffect(() => {
-        if (location.state) {
-          setHospital(location.state);
-        }
-      }, []);
+    const [images , setImages] = useState([]);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-      useEffect(() => {
-        const interval = setInterval(() => {
-          if (hospital.hospital_photos && hospital.hospital_photos.length > 0) {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % hospital.hospital_photos.length);
-          }
-        }, 3000);
+    const handleNext = () => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      };
     
-        return () => clearInterval(interval);
-      }, [hospital.hospital_photos]);
-      console.log("y = ",hospital)
+      const handlePrevious = () => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
+      };
+    
+    useEffect(()=>{
+    setHospital(location.state)
+    const arr = location.state.hospital_photoes.map(photoes => `http://localhost:4000/${photoes.path}`);
+    setImages(arr);
+      const interval = setInterval(() => {
+        handleNext();
+    }, 5000);
 
-    // useEffect(() => {
-       
-    // },[]);
-
+    return ()=>{
+        clearInterval(interval);
+    }
+    },[currentImageIndex])
     return (
-    <div>
-        {/* <img  src={`http://localhost:4000/${hospital.hospital_photoes[currentIndex].path}`} alt="" /> */}
-        
-        <div className="image-carousel">
-          {hospital.hospital_photos.map((photo, index) => (
+       <div>
+         {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ? 
+          <div className={styles.card}>
+          <div className={styles.slider}>
+            <button onClick={handlePrevious} className={styles.sliderBtn}>
+              ❮
+            </button>
             <img
-              key={index}
-              src={`http://localhost:4000/${photo.path}`}
-              alt={`Hospital ${index}`}
-              className={`carousel-image ${index === currentIndex ? "active" : ""}`}
+              src={images[currentImageIndex]}
+              alt="Sliding content"
+              className={styles.sliderImage}
             />
-          ))}
+            <button onClick={handleNext} className={styles.sliderBtn}>
+              ❯
+            </button>
+          </div>
         </div>
-   
-    </div>
-        )
+        :<></>}
+       </div>
+    )
     
     }

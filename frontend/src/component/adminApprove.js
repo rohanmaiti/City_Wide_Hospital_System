@@ -7,6 +7,7 @@ import styles from "../css/adminApprove.module.css"
 export default  function AdminApprovePage(){
     const navigate = useNavigate();
     const [hospitalList,setHospitalList] = useState([]);
+
     useEffect( ()=>{
     axios.get("http://localhost:4000/getHospitals")
     .then((response)=>{
@@ -17,7 +18,6 @@ export default  function AdminApprovePage(){
     
     const navigateDetail = (hospital)=>{
     navigate("/hospitalDetails",{state:hospital})
-    console.log("clicked ",hospital)
     }
 
     return(
