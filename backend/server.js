@@ -20,6 +20,7 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use('/hospital_Images', express.static('hospital_Images'));
 app.use('/identity__Card_Proof', express.static('identity__Card_Proof'));
+app.use('/photoes', express.static('photoes'));
 
 const uploadCounts = {};
 const storage = multer.diskStorage({

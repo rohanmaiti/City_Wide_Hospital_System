@@ -1,0 +1,19 @@
+.section {
+    padding: 50px;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}

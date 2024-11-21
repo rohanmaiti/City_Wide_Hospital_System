@@ -1,0 +1,73 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    padding: 20px;
+}
+
+.logoContainer {
+    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
+}
+
+.logo {
+    height: 40px; /* Adjust the height of the logo as needed */
+}
+
+.navbarLinks {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; /* Allow links to grow and fill the space */
+}
+
+.navbarLink {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    animation: slideInLeft 0.5s forwards; /* Animation for links */
+}
+
+.loginContainer {
+    animation: slideInRight 0.5s forwards; /* Animation for login/logout button */
+}
+
+.loginButton {
+    display: flex;
+    align-items: center;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.loginButton:hover {
+    transform: scale(1.05);
+}
+
+.loginIcon {
+    margin-right: 5px;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
