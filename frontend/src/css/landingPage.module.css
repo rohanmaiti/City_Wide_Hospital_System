@@ -7,7 +7,9 @@
     justify-content: center;
     text-align: center;
 }
-
+.navbar{
+    position: sticky;
+}
 .h1 {
     margin-bottom: 20px;
 }

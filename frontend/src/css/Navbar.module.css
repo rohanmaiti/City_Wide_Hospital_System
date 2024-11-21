@@ -4,6 +4,15 @@
     align-items: center;
     background-color: #282c34;
     padding: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.scrolled {
+    transform: translateY(-10px); /* Move the navbar up slightly */
 }
 
 .logoContainer {
@@ -41,11 +50,12 @@
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
 .logoutButton {
     display: flex;
     align-items: center;
     background-color: #ff5338;
-    color:#ffff;
+    color: #ffff;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;

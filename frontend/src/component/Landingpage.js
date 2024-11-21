@@ -1,10 +1,8 @@
-import React from "react"
-import {useState , useEffect,useRef} from "react"
-import {useNavigate, useLocation} from "react-router-dom";
-import Navbar from "./NavBar";
-import styles from "../css/landingPage.module.css"
+import React, { useState, useEffect, useRef } from "react";
+import Navbar from "./NavBar"; // Adjust the import path as necessary
+import styles from "../css/landingPage.module.css"; // Adjust the import path as necessary
 
-export default function Landingpage(){
+export default function LandingPage() {
     const links = ["Home", "About", "Services", "Contact"];
     const isLoggedIn = false; // Change this to true to test the logout button
 
@@ -14,13 +12,38 @@ export default function Landingpage(){
     const servicesRef = useRef(null);
     const contactRef = useRef(null);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
     const scrollToSection = (ref) => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
+        if (ref) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <div>
-            <Navbar links={links} isLoggedIn={true} scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, servicesRef, contactRef }} />
+            <Navbar 
+                links={links} 
+                isLoggedIn={isLoggedIn} 
+                scrollToSection={scrollToSection} 
+                refs={{ homeRef, aboutRef, servicesRef, contactRef }} 
+                isScrolled={isScrolled} 
+            />
             <div ref={homeRef} className={styles.section} style={{ backgroundColor: '#f0f0f0' }}>
                 <h1>Home</h1>
                 <p>Welcome to our website! Here's some dummy text for the home section.</p>

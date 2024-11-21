@@ -1,12 +1,9 @@
 import React from "react";
 import styles from "../css/Navbar.module.css"; // Import CSS Module
 
-// import React from "react";
-// import styles from "./Navbar.module.css"; // Import CSS Module
-
-export default function Navbar({ links, isLoggedIn, scrollToSection, refs }) {
+export default function Navbar({ links, isLoggedIn, scrollToSection, refs, isScrolled }) {
     return (
-        <nav className={styles.navbar}>
+        <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.logoContainer}>
                 <img src="/path/to/logo.png" alt="Company Logo" className={styles.logo} />
             </div>
