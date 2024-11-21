@@ -24,13 +24,13 @@ export default function Navbar({ links, isLoggedIn, scrollToSection, refs }) {
             </div>
             <div className={styles.loginContainer}>
                 {isLoggedIn ? (
-                    <button className={styles.loginButton}>
-                        <img src="/path/to/logout-icon.png" alt="Logout" className={styles.loginIcon} />
+                    <button className={styles.logoutButton}>
+                        <img src="https://img.icons8.com/?size=100&id=vGj0AluRnTSa&format=png&color=000000" alt="Logout" className={styles.loginIcon} />
                         Logout
                     </button>
                 ) : (
                     <button className={styles.loginButton}>
-                        <img src="/path/to/login-icon.png" alt="Login" className={styles.loginIcon} />
+                        <img src="https://img.icons8.com/?size=100&id=26211&format=png&color=000000" alt="Login" className={styles.loginIcon} />
                         Login
                     </button>
                 )}

@@ -20,7 +20,7 @@ export default function Landingpage(){
 
     return (
         <div>
-            <Navbar links={links} isLoggedIn={isLoggedIn} scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, servicesRef, contactRef }} />
+            <Navbar links={links} isLoggedIn={true} scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, servicesRef, contactRef }} />
             <div ref={homeRef} className={styles.section} style={{ backgroundColor: '#f0f0f0' }}>
                 <h1>Home</h1>
                 <p>Welcome to our website! Here's some dummy text for the home section.</p>

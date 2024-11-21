@@ -41,12 +41,24 @@
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+.logoutButton {
+    display: flex;
+    align-items: center;
+    background-color: #ff5338;
+    color:#ffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
 .loginButton:hover {
     transform: scale(1.05);
 }
 
 .loginIcon {
+    width: 25px;
     margin-right: 5px;
 }
 
