@@ -5,12 +5,13 @@ import HospitalRegistrationForm from './component/hospitalRegistrationForm';
 import AdminApprovePage from "./component/adminApprove";
 import HospitalDetails from "./component/hospitalDetails";
 import CardWithSlider from "./component/slidingImageComp";
+import NavBar from "./component/navBar";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 function App() {
   return (
     <>
     <Router>
-     
+     <NavBar/>
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />

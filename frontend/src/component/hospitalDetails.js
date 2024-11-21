@@ -35,7 +35,11 @@ export default function HospitalDetails(){
     },[currentImageIndex])
     return (
        <div>
-         {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ? 
+        
+         {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ?
+         
+         <div className={styles.grid2}>
+            <div className={styles.grid1}>
           <div className={styles.card}>
           <div className={styles.slider}>
             <button onClick={handlePrevious} className={styles.sliderBtn}>
@@ -50,7 +54,22 @@ export default function HospitalDetails(){
               ❯
             </button>
           </div>
+          <h1 className={styles.h1} >{hospital.hospital_name}</h1>
         </div>
+
+        <div className={styles.div3}>
+            <img className={styles.identity_card} src={`http://localhost:4000/${hospital.identity_card[0].path}`} alt="" />
+        </div>
+        
+         </div>
+
+        <div className={styles.horizontalLine}></div>
+
+        <div>
+            
+        </div>
+        </div>
+
         :<></>}
        </div>
     )

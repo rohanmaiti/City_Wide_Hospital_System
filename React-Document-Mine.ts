@@ -374,5 +374,10 @@ fileInputRef.current.value = "" clears the file input field without breaking the
   learned form react loading indicator 
 
 * Learned about how we can server photoes that are beign stored in server via multer 
+
+
+* code -r project // command  of vs code terminal to open some directory 
+* Learned one interseting thing ... why when we write useEffect everything runs two times initially ?
+* >> as in index.js page there is the App component is under   <React.StrictMode> tag which run the code 2 time 1st time for checking and 2nd time for actual rendering   
         
  */
