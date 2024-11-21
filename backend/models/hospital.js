@@ -9,6 +9,10 @@ const hospital_schema = new mongoose.Schema({
     hospital_pincode: String,
     hospital_address: String,
     hospital_photoes: [],
+    approve_status:{
+        type:Boolean,
+        default:false
+    }
 })
 
 const Hospitals = mongoose.model("hospitals",hospital_schema);

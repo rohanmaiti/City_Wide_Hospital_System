@@ -23,14 +23,17 @@ export default  function AdminApprovePage(){
     return(
         <> 
         <div className={styles.parentContainer}>
-       {
+       {      hospitalList.length > 0 ?
                 hospitalList.map((hospital)=>{
                     
                     return (
                         <div className={styles.container} key={hospital._id}>
                             <img onClick={()=>navigateDetail(hospital)} className={styles.image} src={`http://localhost:4000/${hospital.hospital_photoes[0].path}`} alt="" />
                             <div className={styles.div1}>
-                            <h1 className={styles.name} >{hospital.hospital_name}</h1>
+                                <div style={{margin:5}}>
+                                <h1 className={styles.name} >{hospital.hospital_name}</h1>
+                                </div>
+                           
                             <button onClick={()=>navigateDetail(hospital)} className={styles.button} >Details</button>
                             </div>
                             
@@ -38,6 +41,9 @@ export default  function AdminApprovePage(){
                        
                     )
                 })
+                : <>
+                <h1 className={styles.heading} >No Hospital Request is Here</h1>
+                </>
        }
        
         </div>

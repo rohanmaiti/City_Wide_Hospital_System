@@ -3,20 +3,22 @@
     gap: 20px;
 }
 .container{
-   width: 400px;
-   height: 350px;
+   width: 600px;
+   height: 450px;
    /* border: 1px solid black; */
    border-radius: 5px;
    background-color: rgb(237, 237, 237);
    padding: 10px;
-   margin: 10px;
+   margin: 30px;
    box-shadow: 1px 1px 10px rgb(68, 68, 68);
 }
 .image{
-    aspect-ratio: 4/3;
+    margin: auto;
+    width: 90%;
+    border-radius: 5px;
 }
 .name{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
 }
 .div1{
@@ -36,4 +38,12 @@
 }
 button:hover{
     transform: scale(1.1);
+}
+            
+.heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 35%;
 }

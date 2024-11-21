@@ -1,96 +1,254 @@
+/* Main container */
+.grid1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: baseline;
+  gap: 20px;
+  /* padding: 30px;   */
+  background-color: #f8f8ff;
+  /* border: 1px solid red; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+
+/* Slider and card container */
+
+.grid4{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+}
+.div4{
+  border: 1px solid rgb(255, 0, 0);
+}
+/* Card for slider */
 .card {
-    width: 800px; /* Wider rectangle */
-    height: 500px; /* Reduced height */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
+  width: 800px;
+  height: 500px;
+  /* border: 1px solid #da0000; */
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px  10px rgb(106, 106, 106);
+  margin-top: 10px;
+}
+
+
+/* Slider container */
+.slider {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #a1f2c0; */
+}
+
+/* Slider image */
+.sliderImage {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+/* Slider buttons */
+.sliderBtn {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.sliderBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.sliderBtn:first-of-type {
+  left: 10px;
+}
+
+.sliderBtn:last-of-type {
+  right: 10px;
+}
+
+/* Hospital name */
+.h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+/* Identity card section */
+.div3 {
+  width: 30%;
+  height: 527px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffeae;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  overflow: scroll;
+}
+.div3::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+.identity_card {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  /* aspect-ratio: 4 / 3; */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Divider */
+.horizontalLine {
+  width: 1px;
+  background-color: black;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Additional text details section */
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  width: 100%;
+  height: 525px;
+  /* padding: 20px; */
+  padding-top: 10px;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 8px; */
+  border-left: 0.5 px solid grey;
+  padding-left: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff06cbe;
+}
+
+.div5{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+.div6{
+  display: flex;
+  justify-content:space-between;
+  /* border: 1px solid; */
+}
+.div7{
+  width: 50%;
+  /* border:1px solid blue */
+}
+
+.details h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 20px;
+  line-height: 1.6;
+  /* border: 1px dashed rgb(141, 141, 141); */
+  padding: 3px;
+  /* color: #555; */
+}
+.hr{
+  border: 1px dashed black;
+}
+.h2{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  /* margin-bottom: 10px; */
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+.button1{
+  width: 180px;
+  height: 40px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color:skyblue
+}
+.button2{
+  width: 180px;
+  height: 40px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color:skyblue
+}
+.button3{
+  width: 180px;
+  height: 40px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: 
+  rgb(12, 255, 69);
+}
+.button4{
+  width: 180px;
+  height: 40px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color:red;
+  color:white;
+}
+.button1:hover{
+  background-color:rgb(3, 53, 255);
+  color:white;
+}
+.button2:hover{
+  background-color:rgb(3, 53, 255);
+  color:white;
+}
+.button3:hover{
+  background-color:rgb(42, 223, 22);
+}
+.button4:hover{
+  background-color:rgb(128, 0, 0);
+  color:white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid4 {
     flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    float: left;
-    margin-top: 10px;
-  }
-  
-  .slider {
-    width: 100%;
-    height: 90%; /* Image covers 70% */
-    position: relative;
-    overflow: hidden;
-    display: flex;
     align-items: center;
-    justify-content: center;
   }
-  
-  .sliderImage {
+
+  .card {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
-  
-  .sliderBtn {
-    position: absolute;
-    top: 50%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
+
+  .details,
+  .div3 {
+    width: 100%;
   }
-  
-  .sliderBtn:hover {
-    background: rgba(0, 0, 0, 0.8);
+
+  .button1,
+  .button2,
+  .button3,
+  .button4 {
+    width: 100%;
   }
-  
-  .sliderBtn:first-of-type {
-    left: 10px;
-  }
-  
-  .sliderBtn:last-of-type {
-    right: 10px;
-  }
-  
-  .cardText {
-    padding: 10px;
-    flex: 1;
-    text-align: center;
-    font-size: 14px;
-  }
-  .h1{
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-  }
-  .horizontalLine{
-    width: 1px;
-    background-color: black;
-    height: 70%;
-    position: absolute;
-    left: 50%;
-    margin: auto;
-    margin-top:20px;
-  }
-  .div3{
-    width: 400px;
-    height: 350px;
-    border: 1px solid green;
-    
-  }
-  .identity_card{
-    aspect-ratio: 4/3;
-  }
-  .grid1{
-    padding: 10px;
-    border: 1px solid red;
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-     justify-content: center;
-     align-items: center;
-  }
-  .grid2{
-    display: flex;
-    flex-direction: row;
-    
-  }
-  
+}

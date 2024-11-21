@@ -38,36 +38,65 @@ export default function HospitalDetails(){
         
          {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ?
          
-         <div className={styles.grid2}>
-            <div className={styles.grid1}>
-          <div className={styles.card}>
-          <div className={styles.slider}>
-            <button onClick={handlePrevious} className={styles.sliderBtn}>
-              ❮
-            </button>
-            <img
-              src={images[currentImageIndex]}
-              alt="Sliding content"
-              className={styles.sliderImage}
-            />
-            <button onClick={handleNext} className={styles.sliderBtn}>
-              ❯
-            </button>
+        <div className={styles.grid1}>
+          <div className={styles.grid2}>
+            <div className={styles.card}>
+              <div className={styles.slider}>
+                <button onClick={handlePrevious} className={styles.sliderBtn}>
+                ❮
+                </button>
+                <img
+                src={images[currentImageIndex]}
+                alt="Sliding content"
+                className={styles.sliderImage}
+                />
+                <button onClick={handleNext} className={styles.sliderBtn}>
+                ❯
+                </button>
+              </div>
+                <h1 className={styles.h1} >{hospital.hospital_name}</h1>
+            </div>
           </div>
-          <h1 className={styles.h1} >{hospital.hospital_name}</h1>
-        </div>
 
-        <div className={styles.div3}>
-            <img className={styles.identity_card} src={`http://localhost:4000/${hospital.identity_card[0].path}`} alt="" />
-        </div>
-        
-         </div>
+        <div className={styles.grid4}>
+          <div className={styles.div3}>
+                <h2 className={styles.h2} >Identity Card</h2>
+                <img className={styles.identity_card} src={`http://localhost:4000/${hospital.identity_card[0].path}`} alt="" />
+          </div>
 
-        <div className={styles.horizontalLine}></div>
+          <div className={styles.details}>
+          <h2>Hospital Details</h2>
+          <hr className={styles.hr} />
+            <div className={styles.div6} >
+           
+            <div className={styles.div7} >
+              <p><strong>Hospital Name:</strong> {hospital.hospital_name || "invalid Data"}</p>
+              <p><strong>Address:</strong> {hospital.hospital_address || "invalid Data"}</p>
+              <p><strong>Pincode:</strong> {hospital.hospital_pincode || "invalid Data"}</p>
+              <p><strong>Contact:</strong> {hospital.hospital_contact_number || "invalid Data"}</p>
+            </div>
+            <div className={styles.div7}>
+              <p><strong>Email:</strong> {hospital.hospital_email || "invalid Data"}</p>
+              <p><strong>Applicant Name:</strong> {hospital.hospital_applicant_name || "invalid Data"}</p>
+              <p><strong>Applicant Identity Card Type:</strong> {hospital.identity_type || "invalid Data"}</p>
+            </div> 
+            </div>
+            <hr className={styles.hr} />
+            <div calssName={styles.div4} >
+              <div className={styles.div5}>
+                <button className={styles.button1} >Call The Hospital</button>
+                <button className={styles.button2} >Email the Hospital</button>
+              </div>
+              <div className={styles.div5}> 
+                <button className={styles.button3} >Approve</button>
+                <button className={styles.button4} >Disapprove</button>
+              </div>   
+            </div>   
 
-        <div>
-            
-        </div>
+          </div>
+        </div> 
+
+          {/* <div className={styles.horizontalLine}></div> */}
         </div>
 
         :<></>}
