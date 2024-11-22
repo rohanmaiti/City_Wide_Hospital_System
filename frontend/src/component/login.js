@@ -1,9 +1,19 @@
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate , useLocation} from 'react-router-dom';
+import axios from "axios";
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const [logindata, setLogindata] = useState({ email: "", password: "" });
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [typeOfUser,setTypeOfUser] = useState("");
+    useEffect(()=>{
+     setTypeOfUser(location.state.typeOfUser)
+    },[location.state])
+    
+  
+    const [logindata, setLogindata] = useState({ email: "", password: "" ,type:""});
 
     const handleChange = (e) => {
         setLogindata({ ...logindata, [e.target.name]: e.target.value });
@@ -12,6 +22,48 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle login logic here
+        if(location.state.typeOfUser == "user"){
+            setLogindata({...logindata,type:"user"})
+        }
+        else if(location.state.typeOfUser == "doctor"){
+            setLogindata({...logindata,type:"doctor"})
+        }
+        else if(location.state.typeOfUser == "inventory_manager"){
+            setLogindata({...logindata,type:"inventory_manager"})
+        }
+        else if(location.state.typeOfUser == "hospital_admin"){
+            setLogindata({...logindata,type:"hospital_admin"})
+        }
+        else if(location.state.typeOfUser == "super_admin"){
+            setLogindata({...logindata,type:"super_admin"})
+        }
+        try {
+            
+            let response = await axios.post("http://localhost:4000/login",logindata);
+            Swal.fire({
+                title: "Successful Login!",
+                text: "Redirection to Dashboard",
+                icon: "success"
+            });
+            if(location.state.typeOfUser == "user"){
+                navigate("/userdashboard",{state:{user:response.data.user}});
+            }
+            else if(location.state.typeOfUser == "doctor"){
+                navigate("/doctordashboard",{state:{user:response.data.user}});
+            }
+            else if(location.state.typeOfUser == "inventory_manager"){
+                navigate("/inventory_manager_dashboard",{state:{user:response.data.user}})
+            }
+            else if(location.state.typeOfUser == "hospital_admin"){
+                navigate("/hospital_admin_dashboard",{state:{user:response.data.user}})
+            }
+            else if(location.state.typeOfUser == "super_admin"){
+                navigate("/super_admin_dashboard",{state:{user:response.data.user}})
+            }
+            
+        } catch (error) {
+            
+        }
     };
 
     return (
@@ -43,9 +95,14 @@ const Login = () => {
                 Login
             </button>
             <div className="text-center">
-            <Link className="text-white text-sm hover:text-green-400 " to="/signup">
-                Don't have an account? Click here
-            </Link>
+                {
+                    typeOfUser=="user" ? 
+                     <Link className="text-white text-sm hover:text-green-400 " to="/signup">
+                    Don't have an account? Click here
+                     </Link> : 
+                     <></>
+                }
+          
             <br/>
             <Link className="text-white text-sm hover:text-orange-600" to="/forgotpassword">
                 Forgot password? Reset here

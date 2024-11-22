@@ -25,7 +25,7 @@ const Forgotpassword = () => {
                     text: "You can login with your new password",
                     icon: "success"
                 }).then(() => {
-                    navigate("/"); // This will run after the OK button is clicked
+                    navigate("/login"); // This will run after the OK button is clicked
                 });
             } catch (err) {
                 Swal.fire({
@@ -94,7 +94,7 @@ const Forgotpassword = () => {
             </button>
 
             <div className="w-full text-left mt-4 pl-2">
-                <Link to="/" className="text-black-500 hover:text-yellow-700 text-sm">Back</Link>
+                <Link to="/login" className="text-black-500 hover:text-yellow-700 text-sm">Back</Link>
             </div>
         </form>
     );

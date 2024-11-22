@@ -119,3 +119,27 @@ app.get("/getHospitals",async (req,res)=>{
     console.log(hospitals);
     res.json({hospitals:hospitals});
 })
+
+app.post("/login",async (req,res)=>{
+    try {
+        if(req.body.type == "user" || req.body.type == "hospital_admin" || req.body.type == "super_admin" ){
+            let user =await User.findOne({email:req.body.email,password:req.body.password})
+            if(user == null){
+                let email = User.findOne({email:req.body.email})
+                if(email != null)
+                    throw new Error("Password does not matched");
+                else{
+                    throw new Error("email id does not exists");
+                }
+    
+            }
+            else{
+                res.status(201).json({msg:"login successfull",user:user})
+            }
+        }
+        
+    } catch (error) {
+        res.status(500).json({msg:error.message});
+    }
+    
+})

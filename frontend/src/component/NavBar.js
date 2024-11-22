@@ -1,13 +1,15 @@
 import {React , useState} from "react";
+import {useNavigate} from "react-router-dom";
 import styles from "../css/Navbar.module.css";
 
 export default function Navbar({ links, isLoggedIn, scrollToSection, refs, isScrolled }) {
+    const navigate = useNavigate();
     const [showLoginOptions , setShowLoginOptions] = useState(false);
     const toogleDropDown = ()=>{
         setShowLoginOptions(!showLoginOptions);
     }
-    const handleClick = ()=>{
-        
+    const handleClick = (typeOfUser)=>{
+    navigate("/login",{state:{typeOfUser:typeOfUser}})
     }
     return (
         <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>

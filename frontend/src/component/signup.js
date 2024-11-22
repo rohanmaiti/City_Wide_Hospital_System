@@ -33,6 +33,7 @@ const Signup = () => {
                 text: "Your account has been created",
                 icon: "success"
             });
+            
         } catch (err) {
             Swal.fire({
                 icon: "error",
@@ -167,7 +168,7 @@ const Signup = () => {
                 Sign Up
             </button>
 
-            <Link to={"/"} className="text-white-600 hover:text-blue-800 mt-4">
+            <Link to={"/login"} className="text-white-600 hover:text-blue-800 mt-4">
                 Already have an account? Login
             </Link>
         </form>
