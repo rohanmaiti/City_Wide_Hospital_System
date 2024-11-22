@@ -87,7 +87,7 @@ const Forgotpassword = () => {
             }
 
             <button
-                className="w-36 h-10 bg-yellow-400 text-black font-semibold rounded-md mt-4 hover:bg-green-400"
+             type="submit"   className="w-36 h-10 bg-yellow-400 text-black font-semibold rounded-md mt-4 hover:bg-green-400"
                
             >
                 Change Password

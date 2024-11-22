@@ -1,41 +1,39 @@
-/* Main container */
 .grid1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: baseline;
-  gap: 20px;
-  /* padding: 30px;   */
-  background-color: #f8f8ff;
-  /* border: 1px solid red; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  gap: 10px;
+  background-color: #9797ff;
+  padding-top: 10px;
 }
-
-
-/* Slider and card container */
+.div10{
+  margin-top: 80px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
 
 .grid4{
   width: 100%;
-  height: 100%;
+  height: auto;
   display:flex;
   justify-content: space-around;
-  /* border: 1px solid red; */
-}
-.div4{
-  border: 1px solid rgb(255, 0, 0);
 }
 /* Card for slider */
 .card {
   width: 800px;
-  height: 500px;
-  /* border: 1px solid #da0000; */
-  border-radius: 10px;
+  height: 90%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px  10px rgb(106, 106, 106);
-  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: rgb(232, 255, 99);
+
 }
 
 
@@ -48,14 +46,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #a1f2c0; */
 }
 
 /* Slider image */
 .sliderImage {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 /* Slider buttons */
@@ -86,77 +83,85 @@
 /* Hospital name */
 .h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
-  margin: 10px 0;
 }
 
 /* Identity card section */
 .div3 {
-  width: 30%;
-  height: 527px;
+  width: 40%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #fffeae;
+  background: #fff09c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  border-radius: 10px;
   overflow: scroll;
 }
+
 .div3::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Edge */
 }
 .identity_card {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  /* aspect-ratio: 4 / 3; */
+  width: auto;
+  height: auto;
   border-radius: 8px;
-  object-fit: cover;
+  /* object-fit: none; */
+  overflow: auto;
 }
 
 /* Divider */
 .horizontalLine {
-  width: 1px;
-  background-color: black;
-  height: 70%;
-  position: absolute;
-  left: 50%;
+  width: 0.5px;
+  background-color: rgb(86, 86, 86);
+  height: calc(100vh-600px);
   transform: translateX(-50%);
+  margin-top: 10px;
 }
 
 /* Additional text details section */
 .details {
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 30px;
   width: 100%;
-  height: 525px;
-  /* padding: 20px; */
-  padding-top: 10px;
+  height: calc(100vh - 600px);
+  padding: 20px;
+  /* padding-top: 10px; */
   /* border: 1px solid #ddd; */
   /* border-radius: 8px; */
   border-left: 0.5 px solid grey;
   padding-left: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff06cbe;
+  background-color: #fff7ad;
 }
 
+.div4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .div5{
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  gap: 20px;
+  /* margin: 10px; */
 }
 .div6{
   display: flex;
-  justify-content:space-between;
+  justify-content:space-around;
+  padding-top: 10px;
   /* border: 1px solid; */
 }
 .div7{
-  width: 50%;
-  /* border:1px solid blue */
+  width: 33%;
 }
 
 .details h2 {
@@ -173,12 +178,12 @@
   /* color: #555; */
 }
 .hr{
-  border: 1px dashed black;
+  border: 1px dashed rgb(149, 149, 149);
 }
 .h2{
-  text-align: center;
+  /* text-align: center;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 700; */
   /* margin-bottom: 10px; */
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
@@ -227,6 +232,8 @@
   background-color:rgb(128, 0, 0);
   color:white;
 }
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

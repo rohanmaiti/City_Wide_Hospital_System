@@ -8,8 +8,8 @@ app.listen(4000,()=>{
     console.log("server runnings at 4000");
 })
 // const uri = "mongodb+srv://rohan:rohan123@cluster0.qzw60o2.mongodb.net/hospital_batabase?retryWrites=true&w=majority&appName=Cluster0";
-const uri2 = "mongodb+srv://rohan:rohan123@cluster0.qzw60o2.mongodb.net/hospital_batabase?retryWrites=true&w=majority&appName=Cluster0"
-mongoose.connect(uri2)   
+const uri = "mongodb+srv://rohan:rohan123@cluster0.qzw60o2.mongodb.net/hospital_batabase?retryWrites=true&w=majority&appName=Cluster0"
+mongoose.connect(uri)   
 .then(()=>console.log("mongoose connected"))
 .catch((err)=>console.log("Error connectiong to database",err))
 const User = require("./models/users");
@@ -137,7 +137,7 @@ app.post("/login",async (req,res)=>{
                 res.status(201).json({msg:"login successfull",user:user})
             }
         }
-        
+
     } catch (error) {
         res.status(500).json({msg:error.message});
     }
