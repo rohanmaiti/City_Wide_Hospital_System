@@ -233,7 +233,15 @@
   color:white;
 }
 
-
+.fade-in {
+  opacity: 0; /* Initially invisible */
+  transform: translateY(20px); /* Slight slide effect */
+  transition: opacity 2s ease, transform 2s ease; /* Increase duration to 2 seconds */
+}
+.fade-in.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset transform */
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

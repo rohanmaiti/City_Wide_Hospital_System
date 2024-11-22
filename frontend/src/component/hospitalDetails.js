@@ -21,11 +21,6 @@ export default function HospitalDetails(){
           prevIndex === 0 ? images.length - 1 : prevIndex - 1
         );
       };
-      const [isVisible, setIsVisible] = useState(false);
-
-      useEffect(() => {
-        setIsVisible(true); // Trigger visibility when the component renders
-      }, []);  
     
     useEffect(()=>{
     setHospital(location.state)
@@ -40,8 +35,7 @@ export default function HospitalDetails(){
     }
     },[currentImageIndex])
     return (
-       <div>
-        
+       <div> 
          {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ?
          
         <div className={styles.grid1}>
@@ -108,7 +102,7 @@ export default function HospitalDetails(){
           {/* <div className={styles.horizontalLine}></div> */}
         </div>
 
-        :<></>}
+        :<>No Out Put</>}
        </div>
     )
     
