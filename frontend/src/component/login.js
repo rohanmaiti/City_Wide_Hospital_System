@@ -8,6 +8,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [typeOfUser,setTypeOfUser] = useState("");
+
     useEffect(()=>{
      setTypeOfUser(location.state.typeOfUser)
     },[location.state])
@@ -68,7 +69,7 @@ const Login = () => {
 
     return (
         <form onSubmit={handleSubmit} className="container flex flex-col items-center justify-start gap-4 p-4 mt-16 h-96 mx-auto w-96 bg-gray-800 shadow-lg rounded-lg">
-            <h1 className="text-blue-500 text-3xl font-bold mb-5 mt-7">Login</h1>
+            <h1 className="text-blue-500 text-3xl font-bold mb-5 mt-7"> {location.state.typeOfUser} Login</h1>
             
             <input
                 type="email"

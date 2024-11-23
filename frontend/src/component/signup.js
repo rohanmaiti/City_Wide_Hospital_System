@@ -32,6 +32,8 @@ const Signup = () => {
                 title: "Successful signup!",
                 text: "Your account has been created",
                 icon: "success"
+            }).then(()=>{
+                navigate("/login",{state:{typeOfUser:"user"}});
             });
             
         } catch (err) {

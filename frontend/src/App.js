@@ -7,6 +7,7 @@ import HospitalDetails from "./component/hospitalDetails";
 import CardWithSlider from "./component/slidingImageComp";
 import UserDashboard from "./component/UserDashboard";
 import Landingpage from "./component/Landingpage";
+import SuperadminDashboard from "./component/SuperadminDashboard";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/adminapprove" element={<AdminApprovePage/>} />
         <Route path="/hospitalDetails" element={ <HospitalDetails/>} />
         <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/super_admin_dashboard" element={<SuperadminDashboard/>} />
        
       </Routes>
     </Router>
