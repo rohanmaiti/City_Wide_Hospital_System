@@ -2,7 +2,7 @@ import {React , useState, useEffect} from 'react';
 import Navbar from './NavBar';
 import styles from '../css/superadmin.module.css'
 import TypingAnimation from './TypingText';
-
+import MultiActionAreaCard from './card';
 
 
 export default function SuperadminDashboard(){
@@ -21,6 +21,7 @@ export default function SuperadminDashboard(){
             </div>
            </div>
            <div className={styles.div2}>
+            <MultiActionAreaCard/>
            </div>
         </div>
         
