@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react"
 import {useNavigate , useLocation} from "react-router-dom"
+import axios from "axios"
 import Navbar from "./NavBar";
 import styles from "../css/hospitalDetails.module.css"
 
@@ -8,6 +9,7 @@ export default function HospitalDetails(){
     const location = useLocation();
     const [hospital,setHospital] = useState({});
     const [images , setImages] = useState([]);
+    const [approveStatus, setApproveStatus] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handleNext = () => {
@@ -21,6 +23,23 @@ export default function HospitalDetails(){
           prevIndex === 0 ? images.length - 1 : prevIndex - 1
         );
       };
+
+      const handleClick =async (hospital)=>{
+           try {
+               let response = await axios.post("http://localhost:4000/approveHospital",hospital)
+               setApproveStatus(true);
+           } catch (error) {
+            
+           }
+      }
+      const handleDisapproveClick  = async (hospital)=>{
+        try {
+          let response = await axios.post("http://localhost:4000/disapproveHospital",hospital)
+          setApproveStatus(false);
+      } catch (error) {
+       
+      }
+      }
     
     useEffect(()=>{
     setHospital(location.state)
@@ -90,8 +109,12 @@ export default function HospitalDetails(){
                 <button className={styles.button2} >Email the Hospital</button>
               </div>
               <div className={styles.div5}> 
-                <button className={styles.button3} >Approve</button>
-                <button className={styles.button4} >Disapprove</button>
+                {
+                  approveStatus == false ?  <button onClick={()=>handleClick(hospital)} className={styles.button3} >Approve</button>
+                  : <></>
+                }
+               
+                <button onClick={()=>handleDisapproveClick(hospital)} className={styles.button4} >Disapprove</button>
               </div>   
             </div>   
             </div>

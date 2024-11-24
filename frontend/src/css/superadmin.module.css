@@ -22,9 +22,15 @@
 
 }
 .div2{
+    padding-top: 40px;
     width: 70%;
     height: 100vh;
     border: 1px solid red;
+    display: grid;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: space-evenly; 
+    row-gap: 40px;
 }
 .transparentImage {
     width: 100%;

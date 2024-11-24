@@ -143,3 +143,22 @@ app.post("/login",async (req,res)=>{
     }
     
 })
+
+app.post("/approveHospital",async (req,res)=>{
+    try {
+        let hospital = await Hospital.findOneAndUpdate({email:req.body.hospital_email},{$set:{approve_status:true}})
+        res.status(200).json({msg:"Approved"})
+    } catch (error) {
+        
+    }
+})
+
+
+app.post("/disapproveHospital",async (req,res)=>{
+    try {
+        let hospital = await Hospital.findOneAndUpdate({email:req.body.hospital_email},{$set:{approve_status:false}})
+        res.status(200).json({msg:"disApproved"})
+    } catch (error) {
+        
+    }
+})

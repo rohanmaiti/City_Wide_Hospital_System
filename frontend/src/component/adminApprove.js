@@ -3,8 +3,10 @@ import React from "react";
 import {useState ,useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import styles from "../css/adminApprove.module.css"
+import Navbar from './NavBar';
 
 export default  function AdminApprovePage(){
+    const links = ["Home","Applied Hospitals","Approved Hospitals","Contact Requests","Hospital Lists",]
     const navigate = useNavigate();
     const [hospitalList,setHospitalList] = useState([]);
 
@@ -23,10 +25,14 @@ export default  function AdminApprovePage(){
     return(
         <> 
         <div className={styles.parentContainer}>
-       {      hospitalList.length > 0 ?
-                hospitalList.map((hospital)=>{
-                    
+       {      hospitalList.length > 0  ?
+     
+               <div className="mt-20">
+               <Navbar links={links}/>
+                {hospitalList.map((hospital)=>{
+                    if(hospital.approve_status == false)
                     return (
+
                         <div className={styles.container} key={hospital._id}>
                             <img onClick={()=>navigateDetail(hospital)} className={styles.image} src={`http://localhost:4000/${hospital.hospital_photoes[0].path}`} alt="" />
                             <div className={styles.div1}>
@@ -41,6 +47,9 @@ export default  function AdminApprovePage(){
                        
                     )
                 })
+            }
+
+        </div>
                 : <>
                 <h1 className={styles.heading} >No Hospital Request is Here</h1>
                 </>
