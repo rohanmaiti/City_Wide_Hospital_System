@@ -45,22 +45,24 @@ const Login = () => {
                 title: "Successful Login!",
                 text: "Redirection to Dashboard",
                 icon: "success"
-            });
-            if(location.state.typeOfUser == "user"){
-                navigate("/userdashboard",{state:{user:response.data.user}});
-            }
-            else if(location.state.typeOfUser == "doctor"){
-                navigate("/doctordashboard",{state:{user:response.data.user}});
-            }
-            else if(location.state.typeOfUser == "inventory_manager"){
-                navigate("/inventory_manager_dashboard",{state:{user:response.data.user}})
-            }
-            else if(location.state.typeOfUser == "hospital_admin"){
-                navigate("/hospital_admin_dashboard",{state:{user:response.data.user}})
-            }
-            else if(location.state.typeOfUser == "super_admin"){
-                navigate("/super_admin_dashboard",{state:{user:response.data.user}})
-            }
+            }).then(()=>{
+                if(location.state.typeOfUser == "user"){
+                    navigate("/userdashboard",{state:{user:response.data.user}});
+                }
+                else if(location.state.typeOfUser == "doctor"){
+                    navigate("/doctordashboard",{state:{user:response.data.user}});
+                }
+                else if(location.state.typeOfUser == "inventory_manager"){
+                    navigate("/inventory_manager_dashboard",{state:{user:response.data.user}})
+                }
+                else if(location.state.typeOfUser == "hospital_admin"){
+                    navigate("/hospital_admin_dashboard",{state:{user:response.data.user}})
+                }
+                else if(location.state.typeOfUser == "super_admin"){
+                    navigate("/super_admin_dashboard",{state:{user:response.data.user}})
+                }
+            })
+            
             
         } catch (error) {
             

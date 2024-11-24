@@ -1,7 +1,7 @@
 .typing{
     width: 30%;
     height: 70%;
-    /* border: 1px solid rgb(0, 255, 17); */
+    border: 1px solid rgb(0, 255, 17);
     padding-top: 150px;
     padding-left: 30px;
     
@@ -29,7 +29,7 @@
 .transparentImage {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the image fits properly */
-    background: none; /* Removes any default background */
-    border: none; /* Avoids any default border around the image */
+    object-fit: contain;   /* Ensures the image fits properly            */
+    background: none;     /* Removes any default background             */
+    border: none;        /* Avoids any default border around the image */
   }
