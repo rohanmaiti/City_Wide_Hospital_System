@@ -2,7 +2,7 @@ import {React , useState, useEffect} from 'react';
 import Navbar from './NavBar';
 import styles from '../css/superadmin.module.css'
 import TypingAnimation from './TypingText';
-import { Card, Icon } from 'semantic-ui-react'
+
 
 
 export default function SuperadminDashboard(){
@@ -21,12 +21,6 @@ export default function SuperadminDashboard(){
             </div>
            </div>
            <div className={styles.div2}>
-           <Card
-             image='/images/avatar/large/elliot.jpg'
-             header='Elliot Baker'
-             meta='Friend'
-             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-           />
            </div>
         </div>
         
