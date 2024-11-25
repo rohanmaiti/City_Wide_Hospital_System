@@ -14,10 +14,10 @@ export default function Home(){
         <h1>
             
         </h1>
-        <h1 className={styles.heading1} >One Way Solution to all your managements</h1>
+        <h1 className={styles.heading1} >One Way Solution to all your Health managements</h1>
         </div>
 
-        <div>
+        <div className={styles.div2}>
             <div>
              <img src="http://localhost:4000/photoes/h2.webp" alt="" />
             </div>

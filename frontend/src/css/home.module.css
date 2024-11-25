@@ -9,7 +9,10 @@
     margin-top: 60px;
     height: 100vh; /* Full viewport height */
     width: 100%;
-    border:1px solid blue
+    /* border:1px solid blue; */
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
 }
 
 @keyframes fadeIn{
@@ -22,5 +25,11 @@
 }
 
 .div1{
-    border:1px solid red;
+    /* border:1px solid red; */
+}
+.div2{
+    /* border:1px solid rgb(0, 255, 21); */
+    display:flex;
+    justify-content: flex-start;
+    align-content: center;
 }
