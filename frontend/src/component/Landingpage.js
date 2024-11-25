@@ -7,14 +7,13 @@ import Home from "./Home";
 export default function LandingPage() {
     const links = ["Home", "About", "Services", "Contact" , "ApplyForHospital"];
     const isLoggedIn = false; // Change this to true to test the logout button
-
-    // Create refs for each section
+    // Create refs for each section  
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
     const servicesRef = useRef(null);
     const contactRef = useRef(null);
     const applyforhospitalRef = useRef(null);
-
+ 
     const [isScrolled, setIsScrolled] = useState(false);
 
     const scrollToSection = (ref) => {
@@ -22,14 +21,6 @@ export default function LandingPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    let obj = {
-        name:"Rohan",
-        age:20
-    }
-
-
-    
-
 
     useEffect(() => {
         const handleScroll = () => {

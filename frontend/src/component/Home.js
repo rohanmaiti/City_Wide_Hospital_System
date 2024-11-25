@@ -17,6 +17,15 @@ export default function Home(){
         <h1 className={styles.heading1} >One Way Solution to all your managements</h1>
         </div>
 
+        <div>
+            <div>
+             <img src="http://localhost:4000/photoes/h2.webp" alt="" />
+            </div>
+            <div>
+
+            </div>
+        </div>
+
     
     </div>
     )
