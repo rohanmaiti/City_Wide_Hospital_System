@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./NavBar"; 
 import styles from "../css/landingPage.module.css"; 
 import HospitalRegistrationForm from "./hospitalRegistrationForm";
+import Home from "./Home";
 
 export default function LandingPage() {
     const links = ["Home", "About", "Services", "Contact" , "ApplyForHospital"];
@@ -21,6 +22,14 @@ export default function LandingPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    let obj = {
+        name:"Rohan",
+        age:20
+    }
+
+
+    
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,12 +55,13 @@ export default function LandingPage() {
                 refs={{ homeRef, aboutRef, servicesRef, contactRef ,applyforhospitalRef}} 
                 isScrolled={isScrolled} 
             />
-            <div ref={homeRef} className={styles.section} style={{ backgroundColor: '#f0f0f0' }}>
-                <h1>Home</h1>
+            <div ref={homeRef} className={styles.section} style={{ backgroundColor: '#1a1f26' }}>
+                <Home/>
+                {/* <h1>Home</h1>
                 <p>Welcome to our website! Here's some dummy text for the home section.</p>
-                <img src="https://via.placeholder.com/400" alt="Home" />
+                <img src="https://via.placeholder.com/400" alt="Home" /> */}
             </div>
-            <div ref={aboutRef} className={styles.section} style={{ backgroundColor: '#e0e0e0' }}>
+            <div ref={aboutRef} className={styles.section} style={{ backgroundColor: '#1a1f26' }}>
                 <h1>About</h1>
                 <p>This is the about section. Here's some more dummy text to fill this area.</p>
                 <img src="https://via.placeholder.com/400" alt="About" />

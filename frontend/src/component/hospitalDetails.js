@@ -24,7 +24,7 @@ export default function HospitalDetails(){
         );
       };
 
-      const handleClick =async (hospital)=>{
+      const handleApproveClick =async (hospital)=>{
            try {
                let response = await axios.post("http://localhost:4000/approveHospital",hospital)
                setApproveStatus(true);
@@ -110,7 +110,7 @@ export default function HospitalDetails(){
               </div>
               <div className={styles.div5}> 
                 {
-                  approveStatus == false ?  <button onClick={()=>handleClick(hospital)} className={styles.button3} >Approve</button>
+                  approveStatus==false ?  <button onClick={()=>handleApproveClick(hospital)} className={styles.button3} >Approve</button>
                   : <></>
                 }
                

@@ -4,6 +4,8 @@ import {useState ,useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import styles from "../css/adminApprove.module.css"
 import Navbar from './NavBar';
+import NavBar from "./navBar";
+
 
 export default  function AdminApprovePage(){
     const links = ["Home","Applied Hospitals","Approved Hospitals","Contact Requests","Hospital Lists",]
@@ -28,7 +30,7 @@ export default  function AdminApprovePage(){
        {      hospitalList.length > 0  ?
      
                <div className="mt-20">
-               <Navbar links={links}/>
+               <NavBar links={links}/>
                 {hospitalList.map((hospital)=>{
                     if(hospital.approve_status == false)
                     return (

@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    border: 1px solid green;
 }
 .navbar{
     position: sticky;

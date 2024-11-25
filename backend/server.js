@@ -116,8 +116,9 @@ app.post("/applyForHospital",upload.fields([{ name: 'identity_card' }, { name: '
 
 app.get("/getHospitals",async (req,res)=>{
     let hospitals = await Hospital.find({});
-    console.log(hospitals);
-    res.json({hospitals:hospitals});
+    // console.log(hospitals);
+    let arr = hospitals.filter((hospital)=> hospital.approve_status == false)
+    res.json({hospitals:arr});
 })
 
 app.post("/login",async (req,res)=>{
@@ -145,8 +146,13 @@ app.post("/login",async (req,res)=>{
 })
 
 app.post("/approveHospital",async (req,res)=>{
+    console.log(req.body);
     try {
-        let hospital = await Hospital.findOneAndUpdate({email:req.body.hospital_email},{$set:{approve_status:true}})
+        let hospital = await Hospital.findOneAndUpdate(
+            {hospital_email:req.body.hospital_email},
+            {$set:{approve_status:true}})
+        console.log("apporove status : ",hospital);
+        
         res.status(200).json({msg:"Approved"})
     } catch (error) {
         
@@ -156,7 +162,10 @@ app.post("/approveHospital",async (req,res)=>{
 
 app.post("/disapproveHospital",async (req,res)=>{
     try {
-        let hospital = await Hospital.findOneAndUpdate({email:req.body.hospital_email},{$set:{approve_status:false}})
+        let hospital = await Hospital.findOneAndUpdate(
+            {hospital_email:req.body.hospital_email},
+            {$set:{approve_status:false}})
+        console.log('disapprove status : ',hospital);
         res.status(200).json({msg:"disApproved"})
     } catch (error) {
         
