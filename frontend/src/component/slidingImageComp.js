@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../css/slidingImage.module.css"; // Importing the CSS module
 
+
 const CardWithSlider = () => {
   const images = [
     "https://via.placeholder.com/300x200?text=Image+1",

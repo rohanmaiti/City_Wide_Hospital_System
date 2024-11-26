@@ -1,112 +1,78 @@
 import React, { useState, useEffect } from "react";
 import styles from "../css/imageSlider.module.css";
 
-function CustomCarousel({ children }) {
+function ImageSlider({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [slideDone, setSlideDone] = useState(true);
-  const [timeID, setTimeID] = useState(null);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  let timerId;
 
   useEffect(() => {
-    if (slideDone) {
-      setSlideDone(false);
-      setTimeID(
-        setTimeout(() => {
-          slideNext();
-          setSlideDone(true);
-        }, 5000)
-      );
+    if (isAutoPlaying) {
+      timerId = setTimeout(() => {
+        slideNext();
+      }, 3000);
     }
-  }, [slideDone]);
+    return () => clearTimeout(timerId);
+  }, [activeIndex, isAutoPlaying]);
 
   const slideNext = () => {
-    setActiveIndex((val) => {
-      if (val >= children.length - 1) {
-        return 0;
-      } else {
-        return val + 1;
-      }
-    });
+    setActiveIndex((prev) => (prev + 1) % children.length);
   };
 
   const slidePrev = () => {
-    setActiveIndex((val) => {
-      if (val <= 0) {
-        return children.length - 1;
-      } else {
-        return val - 1;
-      }
-    });
+    setActiveIndex((prev) => (prev - 1 + children.length) % children.length);
   };
 
-  const AutoPlayStop = () => {
-    if (timeID > 0) {
-      clearTimeout(timeID);
-      setSlideDone(false);
-    }
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
   };
 
-  const AutoPlayStart = () => {
-    if (!slideDone) {
-      setSlideDone(true);
-    }
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
   };
 
   return (
     <div
       className={styles.container__slider}
-      onMouseEnter={AutoPlayStop}
-      onMouseLeave={AutoPlayStart}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {children.map((item, index) => {
-        return (
+      <div className={styles.slider__wrapper}>
+        {children.map((item, index) => (
           <div
-            className={`${styles.slider__item} ${styles["slider__item-active-" + (activeIndex + 1)]}`}
             key={index}
+            className={`${styles.slider__item} ${
+              index === activeIndex ? styles.slider__item_active : ""
+            }`}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {item}
           </div>
-        );
-      })}
-
-      <div className={styles.container__slider__links}>
-        {children.map((item, index) => {
-          return (
-            <button
-              key={index}
-              className={
-                activeIndex === index
-                  ? `${styles.container__slider__links_small} ${styles.container__slider__links_small_active}`
-                  : styles.container__slider__links_small
-              }
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveIndex(index);
-              }}
-            ></button>
-          );
-        })}
+        ))}
       </div>
 
-      <button
-        className={styles.slider__btn_next}
-        onClick={(e) => {
-          e.preventDefault();
-          slideNext();
-        }}
-      >
-        {">"}
+      <div className={styles.container__slider__links}>
+        {children.map((_, index) => (
+          <button
+            key={index}
+            className={
+              activeIndex === index
+                ? `${styles.container__slider__links_small} ${styles.container__slider__links_small_active}`
+                : styles.container__slider__links_small
+            }
+            onClick={() => setActiveIndex(index)}
+          />
+        ))}
+      </div>
+
+      <button className={styles.slider__btn_next} onClick={slideNext}>
+        &gt;
       </button>
-      <button
-        className={styles.slider__btn_prev}
-        onClick={(e) => {
-          e.preventDefault();
-          slidePrev();
-        }}
-      >
-        {"<"}
+      <button className={styles.slider__btn_prev} onClick={slidePrev}>
+        &lt;
       </button>
     </div>
   );
 }
 
-export default CustomCarousel;
+export default ImageSlider;
