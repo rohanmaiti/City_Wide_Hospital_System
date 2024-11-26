@@ -9,11 +9,7 @@
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
     z-index: 1; /* Ensure it stays above other content */
-    overflow: visible; /*
-}
-
-.scrolled {
-    transform: translateY(-10px); /* Move the navbar up slightly */
+    overflow: visible; 
 }
 
 .logoContainer {
