@@ -94,7 +94,7 @@ const Forgotpassword = () => {
             </button>
 
             <div className="w-full text-left mt-4 pl-2">
-                <Link to="/login" className="text-black-500 hover:text-yellow-700 text-sm">Back</Link>
+                <Link to="/" className="text-black-500 hover:text-yellow-700 text-sm">Back</Link>
             </div>
         </form>
     );
