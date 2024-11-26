@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react"
 import {useNavigate , useLocation} from "react-router-dom"
 import axios from "axios"
-import Navbar from "./NavBar";
+import SuperAdminNavbar from "./superAdminNavbar";
 import styles from "../css/hospitalDetails.module.css"
 
 export default function HospitalDetails(){
@@ -58,7 +58,7 @@ export default function HospitalDetails(){
          {hospital.hospital_photoes && hospital.hospital_photoes.length > 0 ?
          
         <div className={styles.grid1}>
-          <Navbar links={[1,2,3,4]} />
+          <SuperAdminNavbar/>
           <div className={styles.div10}>
           <div className={styles.grid2}>
             <div className={styles.card}>

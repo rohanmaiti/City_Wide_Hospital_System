@@ -3,8 +3,7 @@ import React from "react";
 import {useState ,useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import styles from "../css/adminApprove.module.css"
-import Navbar from './NavBar';
-import NavBar from "./navBar";
+import SuperAdminNavbar from "./superAdminNavbar";
 
 
 export default  function AdminApprovePage(){
@@ -26,11 +25,12 @@ export default  function AdminApprovePage(){
 
     return(
         <> 
-        <div className={styles.parentContainer}>
+        <SuperAdminNavbar/>
+        {/* <div className={styles.parentContainer}>
        {      hospitalList.length > 0  ?
      
-               <div className="mt-20">
-               <NavBar links={links}/>
+               <div>
+               <SuperAdminNavbar/>
                 {hospitalList.map((hospital)=>{
                     if(hospital.approve_status == false)
                     return (
@@ -49,15 +49,16 @@ export default  function AdminApprovePage(){
                        
                     )
                 })
-            }
+                }
+                </div>
 
-        </div>
+       
                 : <>
                 <h1 className={styles.heading} >No Hospital Request is Here</h1>
                 </>
        }
        
-        </div>
+        </div> */}
         </>
     )
 }

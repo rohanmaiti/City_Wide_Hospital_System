@@ -1,11 +1,14 @@
 .parentContainer{
     display: flex;
     gap: 20px;
+    width: 100%;
+    height: 100vh;
+    width: 1px solid red;
 }
 .container{
    width: 600px;
    height: 450px;
-   /* border: 1px solid black; */
+   border: 1px solid black;
    border-radius: 5px;
    background-color: rgb(237, 237, 237);
    padding: 10px;
