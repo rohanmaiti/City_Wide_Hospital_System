@@ -13,7 +13,7 @@ const TypingAnimation = ({ text }) => {
       } else {
         clearInterval(interval); // Clear the interval when typing is complete
       }
-    }, 100);
+    }, 70);
 
     // Cleanup interval on unmount
     return () => clearInterval(interval);

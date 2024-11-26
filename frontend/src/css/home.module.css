@@ -1,18 +1,28 @@
 .heading1{
     opacity: 0;
-    animation: fadeIn 2s 2s forwards;
+    animation: fadeIn 1s 1s forwards;
     font-size: 40px;
     font-weight: 600;
     color: rgb(141, 141, 141);
 }
 .parent{
-    margin-top: 60px;
+    margin-top: 50px;
     height: 100vh; /* Full viewport height */
     width: 100%;
-    /* border:1px solid blue; */
+    border:1px solid blue;
     display: flex;
     flex-direction:column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.div3{
+border:4px solid rgb(235, 18, 255);
+width: 90vh;
+}
+.div4{
+width: 50%;
+border:4px solid rgb(71, 7, 7);
+
 }
 
 @keyframes fadeIn{
@@ -25,11 +35,32 @@
 }
 
 .div1{
-    /* border:1px solid red; */
+    border:1px solid red;
 }
 .div2{
-    /* border:1px solid rgb(0, 255, 21); */
+    border:1px solid rgb(0, 255, 21);
     display:flex;
     justify-content: flex-start;
     align-content: center;
 }
+.img1{
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s 2s ease-out forwards;
+}
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .textDiv{
+    /* font-size: 40px; */
+    color:white;
+  }
