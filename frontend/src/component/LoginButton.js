@@ -19,15 +19,6 @@ export default function LoginButton() {
       console.log(`Clicked on ${menuItem}`);
     };
   };
-
-  /**
-   * 
-   * <li onClick={()=> handleClick("user")} >User</li>
-                                <li onClick={()=> handleClick("doctor")} >Doctor</li>
-                                <li onClick={()=> handleClick("inventory_manager")} >Inventary Manager</li>
-                                <li onClick={()=> handleClick("hospital_admin")} >Hospital Admin</li>
-                                <li onClick={()=> handleClick("super_admin")} >Super Admin</li>
-   */
   return (
     <Dropdown>
       <MenuButton>Login</MenuButton>
