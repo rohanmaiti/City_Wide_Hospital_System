@@ -17,22 +17,48 @@
 }
 .div2{
     display:flex;
+    justify-content: center;
 }
 .div3{
 /* border:4px solid rgb(235, 18, 255); */
 width: 50%;
+height: auto;
 height:600px ;
 overflow: hidden;
 object-fit: fill;
 opacity: 0;
 animation:slideIn 1s 1s forwards;
-border-radius: 10px;
+border-radius: 20px;
 /* margin: 100px; */
 }
 .div4{
 width: 50%;
+padding-top: 50px;
 /* border:4px solid rgb(72, 84, 255); */
-
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 20px;
+}
+.div4 h1{
+    text-align: center;
+    width: 600px;
+    /* border: 1px solid red; */
+    font-size: 30px;
+    color:rgb(161, 215, 244);
+    animation:fadeIn 1s 0.5s backwards;
+}
+.div4 p{
+    text-align: center;
+    width: 800px;
+    /* border: 1px solid red; */
+    font-size: 20px;
+    color:white;
+    animation:fadeIn 1s 0.5s  backwards;
+}
+.div4 img{
+    animation:fadeIn 1s 0.5s  backwards;
 }
 
 @keyframes fadeIn{

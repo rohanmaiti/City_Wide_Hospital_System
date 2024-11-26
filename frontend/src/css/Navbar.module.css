@@ -8,7 +8,8 @@
     position: fixed; /* Make the navbar fixed */
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1; /* Ensure it stays above other content */
+    overflow: visible; /*
 }
 
 .scrolled {
@@ -16,17 +17,20 @@
 }
 
 .logoContainer {
-    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
+    /* No additional styles were used for this class */
 }
 
 .logo {
-    height: 40px; /* Adjust the height of the logo as needed */
+    height: 40px; /* Adjust height as needed */
+    max-height: 100%; /* Prevents overflowing */
+    width: auto; 
 }
 
 .navbarLinks {
     display: flex;
     flex-direction: row;
     flex-grow: 1; /* Allow links to grow and fill the space */
+    padding-left: 70px;
 }
 
 .navbarLink {
@@ -34,28 +38,22 @@
     text-decoration: none;
     margin: 0 15px;
     animation: slideInLeft 0.5s forwards; /* Animation for links */
+    font-size: 20px;
+}
+
+.navbarLink:hover {
+    color: #0d5eff;
 }
 
 .loginContainer {
     animation: slideInRight 0.5s forwards; /* Animation for login/logout button */
 }
 
-.loginButton {
-    display: flex;
-    align-items: center;
-    background-color: #61dafb;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
 .logoutButton {
     display: flex;
     align-items: center;
     background-color: #ff5338;
-    color: #ffff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
@@ -63,7 +61,7 @@
     transition: transform 0.3s ease;
 }
 
-.loginButton:hover {
+.logoutButton:hover {
     transform: scale(1.05);
 }
 
@@ -72,25 +70,6 @@
     margin-right: 5px;
 }
 
-.dropDown{
-  position: absolute;
-  background-color: rgb(255, 216, 119);
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-.dropDown ul{
-    list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.dropDown li {
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-.dropDown li:hover {
-    background-color: #f0f0f0;
-}
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);

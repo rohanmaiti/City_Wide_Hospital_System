@@ -1,6 +1,7 @@
 import {React , useState} from "react";
 import {useNavigate} from "react-router-dom";
 import styles from "../css/Navbar.module.css";
+import LoginButton from "./LoginButton";
 
 export default function Navbar({ links, isLoggedIn, scrollToSection, refs, isScrolled }) {
     const navigate = useNavigate();
@@ -14,7 +15,8 @@ export default function Navbar({ links, isLoggedIn, scrollToSection, refs, isScr
     return (
         <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.logoContainer}>
-                <img src="/path/to/logo.png" alt="Company Logo" className={styles.logo} />
+            {/* /mnt/7EFE8628FE85D933/5th_semester/SIH_CityWide_Hospital/backend/photoes/logo2.png */}
+                <img  src="http://localhost:4000/photoes/logo4.png" alt="Company Logo" className={styles.logo} />
             </div>
             <div className={styles.navbarLinks}>
                 {links.map((link, index) => (
@@ -36,24 +38,7 @@ export default function Navbar({ links, isLoggedIn, scrollToSection, refs, isScr
                     </button>
                 ) : (
                     <div className={styles.parentOfLogin} >
-                        <button  onClick={toogleDropDown} className={styles.loginButton}>
-                        <img src="https://img.icons8.com/?size=100&id=26211&format=png&color=000000" alt="Login" className={styles.loginIcon} />
-                        Login
-                       
-                    </button>
-                    {
-                          showLoginOptions ? 
-                          <div onMouseOver={()=>setShowLoginOptions(true)} onMouseOut={()=>setShowLoginOptions(false)} className={styles.dropDown}>
-                            <ul>
-                                <li onClick={()=> handleClick("user")} >User</li>
-                                <li onClick={()=> handleClick("doctor")} >Doctor</li>
-                                <li onClick={()=> handleClick("inventory_manager")} >Inventary Manager</li>
-                                <li onClick={()=> handleClick("hospital_admin")} >Hospital Admin</li>
-                                <li onClick={()=> handleClick("super_admin")} >Super Admin</li>
-                            </ul>
-                          </div> :
-                          <></>
-                        }
+                         <LoginButton/>
                     </div>
                     
                 )}

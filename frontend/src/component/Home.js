@@ -13,13 +13,13 @@ export default function Home() {
     },
     {
       imgURL:
-        "https://img.freepik.com/premium-photo/doctor-icon-virtual-screen-health-care-medical-background-copy-space_55997-4372.jpg",
+        "https://docpulse.com/wp-content/uploads/2023/09/Hospital-Information-Management-System-Software-2.jpg",
       imgAlt: "img-2",
       text: "Hello Rohan",
     },
     {
       imgURL:
-        "https://d34t42wpe6kclg.cloudfront.net/in/live/publication/2/7/6/276/pictures/1/how-to-complete-my-profile-as-a-medical-professional-video-cover.jpg",
+        "https://www.tatvasoft.com/outsourcing/wp-content/uploads/2024/04/HMS-Hospital-Management-System-Workflow-Example.jpg",
       imgAlt: "img-3",
       text: "Hello Rohan",
     },
@@ -53,15 +53,18 @@ export default function Home() {
 
         <div className={styles.div4}>
           <h1>
-            Explore Comprehensive Cloud-Based Healthcare Software Solutions
+            Explore Comprehensive  Healthcare Software Solutions
             Tailored for Hospitals, Clinics, and Doctors.
           </h1>
           <p>
-            Experience state-of-the-art digital solutions with DocPulse’s
+            Experience state-of-the-art digital solutions with MedSync's
             CMS(Clinic Management Software), PMS(Patient Management Software),
             and HIMS(Hospital Integrated Management Software), designed to meet
             the unique needs of doctors, clinics, and hospitals.
           </p>
+          <div>
+            <img src="http://localhost:4000/photoes/h5.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
