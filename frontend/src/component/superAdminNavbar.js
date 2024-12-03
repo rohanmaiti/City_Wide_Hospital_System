@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Logout'];
 
 function SuperAdminNavbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -54,8 +54,7 @@ function SuperAdminNavbar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >setAnchorElNav
-            LOGO
+          >MediSync
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -84,8 +83,8 @@ function SuperAdminNavbar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
-            >
-              {pages.map((page) => (
+            >   
+              {pages.map((page) => ( 
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>

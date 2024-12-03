@@ -26,11 +26,11 @@ export default  function AdminApprovePage(){
     return(
         <> 
         <SuperAdminNavbar/>
-        {/* <div className={styles.parentContainer}>
+        <div className={styles.parentContainer}>
        {      hospitalList.length > 0  ?
      
                <div>
-               <SuperAdminNavbar/>
+               {/* <SuperAdminNavbar/> */}
                 {hospitalList.map((hospital)=>{
                     if(hospital.approve_status == false)
                     return (
@@ -58,7 +58,7 @@ export default  function AdminApprovePage(){
                 </>
        }
        
-        </div> */}
+        </div>
         </>
     )
 }

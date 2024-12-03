@@ -138,11 +138,11 @@ const HospitalRegistrationForm = () => {
       onSubmit={handleSubmit}
       encType="multipart/form-data"
     >
-      <h1 className="text-slate-950 text-xl font-bold">Apply For Hospital </h1>
+      <h1 className="pt-3  text-slate-950 text-3xl font-bold">Apply For Hospital </h1>
       <div className={styles.div}>
         <div>
-          <label
-            className="block text-sm/6 font-medium text-gray-900"
+          <label 
+            className="float-left pl-1 block text-lg font-medium text-gray-900"
             htmlFor="hospital_admin "
           >
             Applicant's Name{" "}
@@ -160,7 +160,7 @@ const HospitalRegistrationForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm/6 font-medium text-gray-900">
+          <label className="float-left pl-1 block text-lg font-medium text-gray-900">
             Enter Hospital Name{" "}
           </label>
           <input
@@ -176,7 +176,7 @@ const HospitalRegistrationForm = () => {
       </div>
 
       <div className={styles.div2}>
-        <label className="block text-sm/6 font-medium text-gray-900">
+        <label className="float-left pl-1 block text-lg font-medium text-gray-900">
           Upload your Identity Card
         </label>
         <select
@@ -218,7 +218,7 @@ const HospitalRegistrationForm = () => {
 
       <div className={styles.div3}>
         <div>
-          <label className="block text-sm/6 font-medium text-gray-900">
+          <label className="block text-lg font-medium text-gray-900">
             Contact Number{" "}
           </label>
           <input
@@ -232,7 +232,7 @@ const HospitalRegistrationForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm/6 font-medium text-gray-900">
+          <label className="block text-lg font-medium text-gray-900">
             Email Id{" "}
           </label>
           <input
@@ -246,7 +246,7 @@ const HospitalRegistrationForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm/6 font-medium text-gray-900">
+          <label className="block text-lg font-medium text-gray-900">
             {" "}
             Pincode{" "}
           </label>
@@ -265,7 +265,7 @@ const HospitalRegistrationForm = () => {
         <div>
           <label
             htmlFor="about"
-            className="block text-sm/6 font-medium text-gray-900"
+            className="block text-lg font-medium text-gray-900"
           >
             Full address
           </label>
@@ -281,7 +281,7 @@ const HospitalRegistrationForm = () => {
               onChange={handleChange}
             />
           </div>
-          <p className="mt-1 text-sm/6 text-gray-600">
+          <p className="mt-1 text-lg text-gray-600">
             Write full address of Hospital.
           </p>
         </div>
@@ -289,7 +289,7 @@ const HospitalRegistrationForm = () => {
         <div className={styles.div5}>
           <label
             htmlFor="cover-photo"
-            className="block text-sm/6 font-medium text-gray-900"
+            className="block text-lg font-medium text-gray-900"
           >
             Hospital Photos
           </label>
