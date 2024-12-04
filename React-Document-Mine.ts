@@ -13,7 +13,6 @@ var sendDataToServer = () => {
     .then(data => console.log(data)) // Logs the response from the server
     .catch(error => console.error('Error:', error));
 };
-
 // # using axios
 import axios from 'axios';
 var sendDataToServer = () => {
