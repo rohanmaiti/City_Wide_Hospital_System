@@ -380,7 +380,6 @@ fileInputRef.current.value = "" clears the file input field without breaking the
 * Learned one interseting thing ... why when we write useEffect everything runs two times initially ?
 * >> as in index.js page there is the App component is under   <React.StrictMode> tag which run the code 2 time 1st time for checking and 2nd time for actual rendering 
 * 
-* 
 *   
         
  */
