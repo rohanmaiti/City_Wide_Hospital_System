@@ -28,7 +28,7 @@ var sendDataToServer = () => {
     });
 };
 */
-
+   
 /**
  * 
  ** In React, the <Link> component from react-router-dom is used to create navigation links that
