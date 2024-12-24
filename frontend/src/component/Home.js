@@ -28,7 +28,7 @@ export default function Home() {
         "https://b2461891.smushcdn.com/2461891/wp-content/uploads/2021/10/hospital-management-system.jpg?lossy=1&strip=1&webp=1",
       imgAlt: "img-4",
       text: "Hello Rohan",
-    },
+    }
   ];
 
   return (
