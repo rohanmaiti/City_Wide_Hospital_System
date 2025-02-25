@@ -1,5 +1,6 @@
 //sending data from react to server :
 /*
+
 // # using fetch
 var sendDataToServer = () => {
   fetch('http://localhost:5000/api/data', {
@@ -13,7 +14,8 @@ var sendDataToServer = () => {
     .then(data => console.log(data)) // Logs the response from the server
     .catch(error => console.error('Error:', error));
 };
-
+
+
 // # using axios
 import axios from 'axios';
 var sendDataToServer = () => {
