@@ -15,7 +15,6 @@ var sendDataToServer = () => {
     .catch(error => console.error('Error:', error));
 };
 
-
 // # using axios
 import axios from 'axios';
 var sendDataToServer = () => {
