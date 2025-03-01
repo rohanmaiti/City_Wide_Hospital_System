@@ -1,6 +1,5 @@
 //sending data from react to server :
 /*
-
 // # using fetch
 var sendDataToServer = () => {
   fetch('http://localhost:5000/api/data', {
